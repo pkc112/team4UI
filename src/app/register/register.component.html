@@ -1,3 +1,71 @@
-<p>
-  register works!
-</p>
+<div class="page-wrapper bg-gra-02 p-t-130 p-b-100 font-poppins">
+  <div class="wrapper wrapper--w680">
+      <div class="card card-4">
+          <div class="card-body">
+              <h2 class="title">Registration Form</h2>
+              <form>
+                  <div class="row row-space">
+                      <div class="col-2">
+                          <div class="input-group">
+                              <label class="label">first name</label>
+                              <input class="input--style-4" type="text" name="first_name" maxlength="15" minlength="3">
+                          </div>
+                      </div>
+                      <div class="col-2">
+                          <div class="input-group">
+                              <label class="label">last name</label>
+                              <input class="input--style-4" type="text" name="last_name" maxlength="15" minlength="3">
+                          </div>
+                      </div>
+                  </div>
+                  <div class="row row-space">
+                      <div class="col-2">
+                              <div class="input-group">
+                                  <label class="label">City</label>
+                                  <input class="input--style-4" type="text" name="last_name" maxlength="15" minlength="3">
+                              </div>
+                      </div>
+                      <div class="col-2">
+                          <div class="input-group">
+                              <label class="label">Gender</label>
+                              <div class="p-t-10">
+                                  <label class="radio-container m-r-45">Male
+                                      <input type="radio" checked="checked" name="gender">
+                                      <span class="checkmark"></span>
+                                  </label>
+                                  <label class="radio-container">Female
+                                      <input type="radio" name="gender">
+                                      <span class="checkmark"></span>
+                                  </label>
+                              </div>
+                          </div>
+                      </div>
+                  </div>
+                  <div class="row row-space">
+                      <div class="col-2">
+                          <div class="input-group">
+                              <label class="label">Pan Id</label>
+                              <input class="input--style-4" type="text" name="pan" maxlength="10" minlength="10" required>
+                          </div>
+                      </div>
+                      <div class="col-2">
+                          <div class="input-group">
+                              <label class="label">Phone Number</label>
+                              <input class="input--style-4" type="text" name="phone" pattern="[0-9]{10}" required>
+                          </div>
+                      </div>
+                      <div class="col-2">
+                              <div class="input-group">
+                                  <label class="label">Password</label>
+                                  <input type="password"class="input--style-4" type="text" name="password"maxlength="15" minlength="8" required>
+                              </div>
+                      </div>
+                  </div>
+                  <div class="p-t-15">
+                      <button class="btn btn--radius-2 btn--blue" type="submit" onclick="registartionSubmit()">Submit</button>
+                  </div>
+              </form>
+          </div>
+      </div>
+  </div>
+</div>
