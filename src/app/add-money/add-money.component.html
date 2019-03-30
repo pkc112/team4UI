@@ -1,4 +1,6 @@
 <div class="container margin-top-30">
+    <ngb-alert *ngIf="successMessage" type="success" (close)="successMessage = null">{{ successMessage }}</ngb-alert>
+
   <div>
     <H1>Add funds to your account</H1>
   </div>
