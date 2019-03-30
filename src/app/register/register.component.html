@@ -1,31 +1,52 @@
 <div class="page-wrapper bg-gra-02 p-t-130 p-b-100 font-poppins">
-  <div class="wrapper wrapper--w680">
-      <div class="card card-4">
-          <div class="card-body">
-              <h2 class="title">Registration Form</h2>
-              <form>
-                  <div class="row row-space">
-                      <div class="col-2">
-                          <div class="input-group">
-                              <label class="label">first name</label>
-                              <input class="input--style-4" type="text" name="first_name" maxlength="15" minlength="3">
-                          </div>
-                      </div>
-                      <div class="col-2">
-                          <div class="input-group">
-                              <label class="label">last name</label>
-                              <input class="input--style-4" type="text" name="last_name" maxlength="15" minlength="3">
-                          </div>
-                      </div>
-                  </div>
-                  <div class="row row-space">
-                      <div class="col-2">
-                              <div class="input-group">
-                                  <label class="label">City</label>
-                                  <input class="input--style-4" type="text" name="last_name" maxlength="15" minlength="3">
-                              </div>
-                      </div>
-                      <div class="col-2">
+    <div class="wrapper wrapper--w680">
+        <div class="card card-4">
+            <div class="card-body">
+                <h2 class="title">Registration Form</h2>
+                <form novalidate (ngSubmit)="onSubmit()" #f="ngForm">
+                    <div class="row row-space">
+                        <div class="col-6 padding-left-right-15">
+                            <div class="input-group">
+                                <label class="label">Name *</label>
+                                <input class="input--style-4" type="text" name="first_name" 
+                                    name="name" [(ngModel)]="model.name" required #name="ngModel" [ngClass]="{
+                                        'has-dangerr': name.invalid && (name.dirty || name.touched),
+                                        'has-success': name.valid && (name.dirty || name.touched)
+                                      }">
+                                <div class="form-control-feedback" *ngIf="name.errors && (name.dirty || name.touched)">
+                                    <p *ngIf="name.errors.required">Name is required</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-6 padding-left-right-15">
+                            <div class="input-group">
+                                <label class="label">UPI address *</label>
+                                <input class="input--style-4" type="text" 
+                                    name="upi" [(ngModel)]="model.upi" required #upi="ngModel" [ngClass]="{
+                                        'has-dangerr': upi.invalid && (upi.dirty || upi.touched),
+                                        'has-success': upi.valid && (upi.dirty || upi.touched)
+                                      }">
+                                <div class="form-control-feedback" *ngIf="upi.errors && (upi.dirty || upi.touched)">
+                                    <p *ngIf="upi.errors.required">upi is required</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row row-space">
+                        <div class="col-6 padding-left-right-15">
+                            <div class="input-group">
+                                <label class="label">City</label>
+                                <input class="input--style-4" type="text" maxlength="15" minlength="3"
+                                    name="city" [(ngModel)]="model.city" required #city="ngModel" [ngClass]="{
+                                        'has-dangerr': city.invalid && (city.dirty || city.touched),
+                                        'has-success': city.valid && (city.dirty || city.touched)
+                                      }">
+                                <div class="form-control-feedback" *ngIf="city.errors && (city.dirty || city.touched)">
+                                    <p *ngIf="city.errors.required">City is required</p>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- <div class="col-6 padding-left-right-15">
                           <div class="input-group">
                               <label class="label">Gender</label>
                               <div class="p-t-10">
@@ -39,33 +60,58 @@
                                   </label>
                               </div>
                           </div>
-                      </div>
-                  </div>
-                  <div class="row row-space">
-                      <div class="col-2">
-                          <div class="input-group">
-                              <label class="label">Pan Id</label>
-                              <input class="input--style-4" type="text" name="pan" maxlength="10" minlength="10" required>
-                          </div>
-                      </div>
-                      <div class="col-2">
-                          <div class="input-group">
-                              <label class="label">Phone Number</label>
-                              <input class="input--style-4" type="text" name="phone" pattern="[0-9]{10}" required>
-                          </div>
-                      </div>
-                      <div class="col-2">
-                              <div class="input-group">
-                                  <label class="label">Password</label>
-                                  <input type="password"class="input--style-4" type="text" name="password"maxlength="15" minlength="8" required>
-                              </div>
-                      </div>
-                  </div>
-                  <div class="p-t-15">
-                      <button class="btn btn--radius-2 btn--blue" type="submit" onclick="registartionSubmit()">Submit</button>
-                  </div>
-              </form>
-          </div>
-      </div>
-  </div>
+                      </div> -->
+                        <div class="col-6 padding-left-right-15">
+                            <div class="input-group">
+                                <label class="label">Pan Id</label>
+                                <input class="input--style-4" type="text"
+                                    required name="pan" [(ngModel)]="model.pan" required #pan="ngModel" [ngClass]="{
+                                        'has-dangerr': pan.invalid && (pan.dirty || pan.touched),
+                                        'has-success': pan.valid && (pan.dirty || pan.touched)
+                                      }">
+                                <div class="form-control-feedback" *ngIf="pan.errors && (pan.dirty || pan.touched)">
+                                    <p *ngIf="pan.errors.required">Pan detail is required</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row row-space">
+                        <div class="col-6 padding-left-right-15">
+                            <div class="input-group">
+                                <label class="label">Phone Number</label>
+                                <input class="input--style-4" type="text" pattern="[0-9]{10}" required
+                                    name="phone" [(ngModel)]="model.phone" required #phone="ngModel" [ngClass]="{
+                                        'has-dangerr': phone.invalid && (phone.dirty || phone.touched),
+                                        'has-success': phone.valid && (phone.dirty || phone.touched)
+                                      }">
+                                <div class="form-control-feedback" *ngIf="phone.errors && (phone.dirty || phone.touched)">
+                                    <p *ngIf="phone.errors.required">Phone number is required</p>
+                                    <p *ngIf="phone.errors.pattern">Phone number is invalid</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-6 padding-left-right-15">
+                            <div class="input-group">
+                                <label class="label">Password</label>
+                                <input type="password" class="input--style-4" type="text" maxlength="15"
+                                    minlength="8" required name="password" [(ngModel)]="model.npasswordame" required #password="ngModel"
+                                    [ngClass]="{
+                                        'has-dangerr': password.invalid && (password.dirty || password.touched),
+                                        'has-success': password.valid && (password.dirty || password.touched)
+                                      }">
+                                <div class="form-control-feedback" *ngIf="password.errors && (password.dirty || password.touched)">
+                                    <p *ngIf="password.errors.required">Password is required</p>
+                                    <p *ngIf="password.errors.minlength">Password should be atleast 8 character</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="p-t-15 padding-left-right-15">
+                        <button class="btn btn--radius-2 btn--blue" type="submit" [disabled]="f.invalid"
+                            onclick="registartionSubmit()">Submit</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
 </div>
