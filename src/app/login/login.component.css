@@ -1,6 +1,7 @@
 .login{
     height: 80vh;
     background-color:lavender;
+    padding: 30px 15px !important;
     
 }
 .login-main{
@@ -8,7 +9,7 @@
     font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
     color: black;
     text-align:center;
-    padding-top: 20%;
+    margin-top:30px;
 }
 #username{
     width: 100%;
@@ -16,7 +17,6 @@
     box-sizing: border-box;
     border-radius: 6px;
     border: 2px whitesmoke;
-    margin-top: 23%;
 }
 #password{
     width: 100%;

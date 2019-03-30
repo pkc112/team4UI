@@ -1,3 +1,55 @@
-<p>
-  private-home works!
-</p>
+<div class="container cta-100 ">
+  <div class="container">
+    <div class="row blog">
+      <div class="col-md-12">
+        <div id="blogCarousel" class="carousel slide container-blog" data-ride="carousel">
+          <ol class="carousel-indicators">
+            <li data-target="#blogCarousel" data-slide-to="0" class="active"></li>
+            <li data-target="#blogCarousel" data-slide-to="1"></li>
+          </ol>
+          <!-- Carousel items -->
+          <div class="carousel-inner">
+            <div class="carousel-item active">
+              <div class="row">
+                <div class="col-md-4" *ngFor="let scheme of schemes">
+                  <div class="item-box-blog">
+                    <div class="item-box-blog-image">
+                      <!--Date-->
+                      <div class="item-box-blog-date bg-blue-ui white"> <span class="mon">New</span> </div>
+                      <!--Image-->
+                      <figure> <img alt=""
+                          src="http://img-d03.moneycontrol.co.in/news_image_files/2017/09/7.jpg"> </figure>
+                    </div>
+                    <div class="item-box-blog-body">
+                      <!--Heading-->
+                      <div class="item-box-blog-heading">
+                        <a href="#" tabindex="0">
+                          <h5>{{scheme.fundName}}</h5>
+                        </a>
+                      </div>
+                      <!--Data-->
+                      <div class="item-box-blog-data" style="padding: px 15px;">
+                          <p><i class=""></i> Deposite Due Date, &nbsp; &nbsp; <i class=""></i> {{scheme.depositeDueDate | date}}</p>
+                          <p><i class=""></i> Bidding Due Date,&nbsp; &nbsp; <i class=""></i> {{scheme.biddingDate | date}}</p>
+                          <p><i class=""></i> Amount, &nbsp; &nbsp; <i class=""></i> {{scheme.baseAmount | currency}}</p>
+                      </div>
+                      <!--Text-->
+                      <div class="mt"> <a (click)="addToPortfolio(scheme)" tabindex="0" class="btn bg-blue-ui white read">Add to Portfolio</a> </div>
+                      <!--Read More Button-->
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <!--.row-->
+            </div>
+            <!--.item-->
+            
+            <!--.item-->
+          </div>
+          <!--.carousel-inner-->
+        </div>
+        <!--.Carousel-->
+      </div>
+    </div>
+  </div>
+</div>

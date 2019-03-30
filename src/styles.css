@@ -2,8 +2,8 @@
 @import "~bootstrap/dist/css/bootstrap.css";
 @import "~font-awesome/css/font-awesome.css";
 
-.form-control.has-danger {
-border: 2px solid red;
+.form-control.has-danger , .has-dangerr{
+border: 2px solid red !important;
 }
 
 .margin-top-15{
@@ -62,3 +62,10 @@ border: 2px solid red;
     from {bottom: 30px; opacity: 1;}
     to {bottom: 0; opacity: 0;}
   }
+.homeLogo {
+    height: 30px;
+}
+
+.padding-left-right-15 {
+    padding: 0 15px !important;
+}
