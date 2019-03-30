@@ -1,8 +1,10 @@
-<div *ngIf="isLoggedIn;else templateName">
+<div *ngIf="isLoggedIn;else elsepart">
   <app-private-nav></app-private-nav>
 </div>
-<div >
-  <app-public-nav></app-public-nav>
-</div>
+<ng-template #elsepart>
+  <div>
+    <app-public-nav></app-public-nav>
+  </div>
+</ng-template>
 
 <router-outlet></router-outlet>
