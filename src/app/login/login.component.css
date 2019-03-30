@@ -1,0 +1,38 @@
+.login{
+    height: 80vh;
+    background-color:lavender;
+    
+}
+.login-main{
+    font-weight: bold;
+    font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    color: black;
+    text-align:center;
+    padding-top: 20%;
+}
+#username{
+    width: 100%;
+    padding: 12px 20px;
+    box-sizing: border-box;
+    border-radius: 6px;
+    border: 2px whitesmoke;
+    margin-top: 23%;
+}
+#password{
+    width: 100%;
+    padding: 12px 20px;
+    box-sizing: border-box;
+    border-radius: 6px;
+    border: 2px whitesmoke;
+    margin-top: 12%;
+}
+button{
+    width: 100%;
+    padding: 12px 20px;
+    box-sizing: border-box;
+    border-radius: 6px;
+    border: 2px green;
+    margin-top: 12%;
+    background-color: green;
+    color: azure;
+}
