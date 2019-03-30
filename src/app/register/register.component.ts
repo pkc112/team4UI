@@ -28,7 +28,6 @@ export class RegisterComponent implements OnInit {
       this.form.reset();
       this.router.navigate(['/profile']);
     }
-    
   }
 
 }
