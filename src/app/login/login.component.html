@@ -2,9 +2,9 @@
   <div class="row">
     <div class="col-sm-4">
     </div>
-    <div class="col-sm-4 login">
+    <div class="col-sm-4">
       <div class="login-main">Login</div>
-      <form novalidate (ngSubmit)="onSubmit()" #f="ngForm">
+      <form novalidate (ngSubmit)="onSubmit()" #f="ngForm" class="login">
         <input type="text" id="username" name="username" maxlength="10" minlength="10" placeholder="Phone Nunber"
           required [(ngModel)]="model.username" required #username="ngModel"
     
