@@ -24,7 +24,14 @@ export class RegisterComponent implements OnInit {
 
   onSubmit() {
     if (this.form.valid) {
-      sessionStorage.setItem('userDetails', this.form.value.stringify());
+      sessionStorage.setItem('userDetailsName', this.form.value.name);
+      sessionStorage.setItem('userDetailsCity', this.form.value.city);
+      sessionStorage.setItem('userDetailsPan', this.form.value.pan);
+      sessionStorage.setItem('userDetailsPhone', this.form.value.phone);
+      sessionStorage.setItem('userDetailsUpi', this.form.value.upi);
+      
+      sessionStorage.setItem('isAuthenticated', 'true');
+
       this.form.reset();
       this.router.navigate(['/profile']);
     }

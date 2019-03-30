@@ -93,7 +93,7 @@
                         <div class="col-6 padding-left-right-15">
                             <div class="input-group">
                                 <label class="label">Password</label>
-                                <input type="password" class="input--style-4" type="text" maxlength="15"
+                                <input type="password" class="input--style-4" maxlength="15"
                                     minlength="8" required name="password" [(ngModel)]="model.npasswordame" required #password="ngModel"
                                     [ngClass]="{
                                         'has-dangerr': password.invalid && (password.dirty || password.touched),
@@ -108,7 +108,7 @@
                     </div>
                     <div class="p-t-15 padding-left-right-15">
                         <button class="btn btn--radius-2 btn--blue" type="submit" [disabled]="f.invalid"
-                            onclick="registartionSubmit()">Submit</button>
+                            >Submit</button>
                     </div>
                 </form>
             </div>
