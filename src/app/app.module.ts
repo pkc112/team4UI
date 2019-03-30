@@ -9,6 +9,9 @@ import { HomeComponent } from './home/home.component';
 import { PrivateHomeComponent } from './private-home/private-home.component';
 import { RegisterComponent } from './register/register.component';
 import { LoginComponent } from './login/login.component';
+import { ProfileComponent } from './profile/profile.component';
+import { AddMoneyComponent } from './add-money/add-money.component';
+import { FundsComponent } from './funds/funds.component';
 
 @NgModule({
   declarations: [
@@ -18,7 +21,10 @@ import { LoginComponent } from './login/login.component';
     HomeComponent,
     PrivateHomeComponent,
     RegisterComponent,
-    LoginComponent
+    LoginComponent,
+    ProfileComponent,
+    AddMoneyComponent,
+    FundsComponent
   ],
   imports: [
     BrowserModule,
