@@ -1,6 +1,35 @@
 <!doctype html>
 <html lang="en">
 <head>
+  <script src="https://js.pusher.com/4.4/pusher.min.js"></script>
+  <script>
+    
+    function display(bidAmount) {
+      // Get the snackbar DIV
+      var x = document.getElementById("snackbar");
+      x.innerHTML = "Some user is bidding funds for " + bidAmount;
+
+      // Add the "show" class to DIV
+      x.className = "show";
+
+      // After 3 seconds, remove the show class from DIV
+      setTimeout(function(){ x.className = x.className.replace("show", ""); }, 3000);
+    }
+    
+    // Enable pusher logging - don't include this in production
+    Pusher.logToConsole = true;
+
+    var pusher = new Pusher('ba9f8abab4df1af27e4f', {
+      cluster: 'ap2',
+      forceTLS: true
+    });
+
+    console.log("init");
+    var channel = pusher.subscribe('public-1');
+    channel.bind('bid', function(data) {
+      display(data.biddingAmount);
+    });
+  </script>
   <meta charset="utf-8">
   <title>Team4UI</title>
   <base href="/">
@@ -9,6 +38,7 @@
   <link rel="icon" type="image/x-icon" href="favicon.ico">
 </head>
 <body>
+  <div id="snackbar"></div>
   <app-root></app-root>
 </body>
 </html>
