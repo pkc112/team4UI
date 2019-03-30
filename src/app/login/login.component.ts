@@ -1,4 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ViewChild } from '@angular/core';
+import { Router } from '@angular/router';
 class UserLogin {
   constructor(public username: string = '',
               public password: string = '') {
@@ -10,10 +11,17 @@ class UserLogin {
   styleUrls: ['./login.component.css']
 })
 export class LoginComponent implements OnInit {
-
-  constructor() { }
+  @ViewChild('f') form: any;
+  constructor(private routes: Router) { }
   model: UserLogin = new UserLogin();
   ngOnInit() {
+  }
+
+  onSubmit(){
+    if (this.form.valid) {
+      sessionStorage.setItem('isAuthenticated', 'true');
+      this.routes.navigate(['privatehome'])
+    }
   }
 
 }

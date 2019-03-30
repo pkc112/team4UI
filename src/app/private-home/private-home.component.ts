@@ -1,3 +1,6 @@
+import { CommonService } from './../common.service';
+
+import { Router, CanActivate } from '@angular/router';
 import { Component, OnInit } from '@angular/core';
 
 @Component({
@@ -13,11 +16,16 @@ export class PrivateHomeComponent implements OnInit {
 
   addToPortfolio(scheme) {
     console.log(scheme);
+    this.router.navigate(['funds']);
   }
 
-  constructor() { }
+
+  constructor(private commonService: CommonService, public router: Router) { }
 
   ngOnInit() {
+    /* this.commonService.getFunds().toPromise().then((resp) => {
+      console.log(resp);
+    }, () => {}); */
   }
 
 }

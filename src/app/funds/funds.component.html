@@ -1,3 +1,30 @@
-<p>
-  funds works!
-</p>
+<div class="container margin-top-30">
+    <ngb-alert *ngIf="successMessage" type="success" (close)="successMessage = null">{{ successMessage }}</ngb-alert>
+    <ngb-alert *ngIf="fail" type="danger" (close)="fail = null">{{ fail }}</ngb-alert>
+
+  <div>
+    <H1>Add Bid to New Life Fund</H1>
+  </div>
+
+  <div style="margin:30px 0">
+  Current bid Amount: &nbsp; &nbsp; {{currentBid}}
+</div> 
+  <form novalidate (ngSubmit)="onSubmit()" #f="ngForm" class="">
+    <label>Amount</label>
+    <input type="number" class="form-control col-md-6 col-sm-12" name="amount" [(ngModel)]="model.amount" required #amount="ngModel"
+    
+    [ngClass]="{
+      'has-danger': amount.invalid && (amount.dirty || amount.touched),
+      'has-success': amount.valid && (amount.dirty || amount.touched)
+    }">
+    <div class="form-control-feedback" *ngIf="amount.errors && (amount.dirty || amount.touched) || model.amount === 0">
+      <p *ngIf="amount.errors.required">Amount is required</p>
+      <p *ngIf="model.amount === 0">Amount can't be zero</p>
+    </div>
+    <button type="submit"
+	        class="btn btn-primary margin-top-15"
+	        [disabled]="f.invalid || model.amount === 0">Submit
+	</button>
+  </form>
+  
+</div>
